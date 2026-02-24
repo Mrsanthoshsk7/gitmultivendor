@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { orderService } from "../../services/orderService";
 
 function VendorOrders() {
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const API_URL = process.env.REACT_APP_API_URL;
-
     useEffect(() => {
         fetchVendorOrders();
-    }, [API_URL]);
+    }, []);
 
     const fetchVendorOrders = async () => {
         try {
-            const res = await axios.get(`${API_URL}/orders/vendor/all`);
-            setOrders(res.data.orders || []);
+            const res = await orderService.getVendorOrders();
+            setOrders(res.orders || []);
         } catch (error) {
             console.error("Error fetching orders:", error);
         } finally {
@@ -24,13 +22,12 @@ function VendorOrders() {
 
     const handleStatusChange = async (orderId, newStatus) => {
         try {
-            await axios.put(`${API_URL}/orders/${orderId}/status`, {
-                orderStatus: newStatus,
-            });
+            await orderService.updateOrderStatus(orderId, newStatus);
             alert("Order status updated!");
             fetchVendorOrders();
         } catch (error) {
             console.error("Error updating order:", error);
+            alert("Error updating order status");
         }
     };
 

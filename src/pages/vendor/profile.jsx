@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { vendorService } from "../../services/vendorService";
 import { useAuth } from "../../context/AuthContext";
 
 function VendorProfile() {
@@ -14,24 +14,23 @@ function VendorProfile() {
         accountHolder: "",
     });
 
-    const API_URL = process.env.REACT_APP_API_URL;
     const { refreshUser } = useAuth();
 
     useEffect(() => {
         fetchProfile();
-    }, [API_URL]);
+    }, []);
 
     const fetchProfile = async () => {
         try {
-            const res = await axios.get(`${API_URL}/vendors/profile/me`);
-            setProfile(res.data.vendor);
+            const res = await vendorService.getVendorProfile();
+            setProfile(res.vendor);
             setFormData({
-                storeName: res.data.vendor.storeName,
-                description: res.data.vendor.description,
-                logo: res.data.vendor.logo,
-                bankAccount: res.data.vendor.bankDetails?.accountNumber || "",
-                bankCode: res.data.vendor.bankDetails?.bankCode || "",
-                accountHolder: res.data.vendor.bankDetails?.accountHolder || "",
+                storeName: res.vendor.storeName,
+                description: res.vendor.storeDescription || "",
+                logo: res.vendor.storeLogo || "",
+                bankAccount: res.vendor.bankDetails?.accountNumber || "",
+                bankCode: res.vendor.bankDetails?.ifscCode || "", // Backend uses ifscCode
+                accountHolder: res.vendor.bankDetails?.accountHolder || "",
             });
             // Refresh auth context to update approval status
             await refreshUser();
@@ -57,13 +56,12 @@ function VendorProfile() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`${API_URL}/vendors/profile/me`, {
-                storeName: formData.storeName,
-                description: formData.description,
-                logo: formData.logo,
+            await vendorService.updateVendorProfile({
+                storeDescription: formData.description,
+                storeLogo: formData.logo,
                 bankDetails: {
                     accountNumber: formData.bankAccount,
-                    bankCode: formData.bankCode,
+                    ifscCode: formData.bankCode,
                     accountHolder: formData.accountHolder,
                 },
             });
@@ -71,7 +69,7 @@ function VendorProfile() {
             fetchProfile();
         } catch (error) {
             console.error("Error updating profile:", error);
-            alert("Error updating profile");
+            alert("Error updating profile: " + (error.message || "Something went wrong"));
         }
     };
 

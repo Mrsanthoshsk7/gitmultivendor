@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { vendorService } from "../../services/vendorService";
 
 function VendorDashboard() {
     const [stats, setStats] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const API_URL = process.env.REACT_APP_API_URL;
-
     useEffect(() => {
         fetchStats();
-    }, [API_URL]);
+    }, []);
 
     const fetchStats = async () => {
         try {
-            const res = await axios.get(`${API_URL}/vendors/dashboard/stats`);
-            setStats(res.data.stats);
+            const res = await vendorService.getVendorStats();
+            setStats(res.stats);
         } catch (error) {
             console.error("Error fetching stats:", error);
         } finally {
