@@ -1,0 +1,119 @@
+ERROR: Product validation failed: category: Cast to ObjectId failed for value "Mobiles" (type string) at path "category" because of "BSONError"
+STACK: ValidationError: Product validation failed: category: Cast to ObjectId failed for value "Mobiles" (type string) at path "category" because of "BSONError"
+    at Document.invalidate (C:\Own_projects\eccom-frontend - Copy\backend\node_modules\mongoose\lib\document.js:3405:32)
+    at init (C:\Own_projects\eccom-frontend - Copy\backend\node_modules\mongoose\lib\document.js:821:18)
+    at Document.$__init (C:\Own_projects\eccom-frontend - Copy\backend\node_modules\mongoose\lib\document.js:717:3)
+    at model.syncWrapper [as $__init] (C:\Own_projects\eccom-frontend - Copy\backend\node_modules\kareem\index.js:291:25)
+    at Document.init (C:\Own_projects\eccom-frontend - Copy\backend\node_modules\mongoose\lib\document.js:658:8)
+    at Document.$init (C:\Own_projects\eccom-frontend - Copy\backend\node_modules\mongoose\lib\document.js:674:42)
+    at C:\Own_projects\eccom-frontend - Copy\backend\node_modules\mongoose\lib\query.js:2698:9
+    at new Promise (<anonymous>)
+    at C:\Own_projects\eccom-frontend - Copy\backend\node_modules\mongoose\lib\query.js:2692:38
+    at Array.map (<anonymous>)
+ERROR: Product validation failed: category: Cast to ObjectId failed for value "Mobiles" (type string) at path "category" because of "BSONError"
+STACK: ValidationError: Product validation failed: category: Cast to ObjectId failed for value "Mobiles" (type string) at path "category" because of "BSONError"
+    at Document.invalidate (C:\Own_projects\eccom-frontend - Copy\backend\node_modules\mongoose\lib\document.js:3405:32)
+    at init (C:\Own_projects\eccom-frontend - Copy\backend\node_modules\mongoose\lib\document.js:821:18)
+    at Document.$__init (C:\Own_projects\eccom-frontend - Copy\backend\node_modules\mongoose\lib\document.js:717:3)
+    at model.syncWrapper [as $__init] (C:\Own_projects\eccom-frontend - Copy\backend\node_modules\kareem\index.js:291:25)
+    at Document.init (C:\Own_projects\eccom-frontend - Copy\backend\node_modules\mongoose\lib\document.js:658:8)
+    at Document.$init (C:\Own_projects\eccom-frontend - Copy\backend\node_modules\mongoose\lib\document.js:674:42)
+    at C:\Own_projects\eccom-frontend - Copy\backend\node_modules\mongoose\lib\query.js:2698:9
+    at new Promise (<anonymous>)
+    at C:\Own_projects\eccom-frontend - Copy\backend\node_modules\mongoose\lib\query.js:2692:38
+    at Array.map (<anonymous>)
+ERROR: Product validation failed: category: Cast to ObjectId failed for value "Mobiles" (type string) at path "category" because of "BSONError"
+STACK: ValidationError: Product validation failed: category: Cast to ObjectId failed for value "Mobiles" (type string) at path "category" because of "BSONError"
+    at Document.invalidate (C:\Own_projects\eccom-frontend - Copy\backend\node_modules\mongoose\lib\document.js:3405:32)
+    at init (C:\Own_projects\eccom-frontend - Copy\backend\node_modules\mongoose\lib\document.js:821:18)
+    at Document.$__init (C:\Own_projects\eccom-frontend - Copy\backend\node_modules\mongoose\lib\document.js:717:3)
+    at model.syncWrapper [as $__init] (C:\Own_projects\eccom-frontend - Copy\backend\node_modules\kareem\index.js:291:25)
+    at Document.init (C:\Own_projects\eccom-frontend - Copy\backend\node_modules\mongoose\lib\document.js:658:8)
+    at Document.$init (C:\Own_projects\eccom-frontend - Copy\backend\node_modules\mongoose\lib\document.js:674:42)
+    at C:\Own_projects\eccom-frontend - Copy\backend\node_modules\mongoose\lib\query.js:2698:9
+    at new Promise (<anonymous>)
+    at C:\Own_projects\eccom-frontend - Copy\backend\node_modules\mongoose\lib\query.js:2692:38
+    at Array.map (<anonymous>)
+
+
+--- [2026-02-24T10:20:28.646Z] ---
+USER: 6995e5d35ea694cb4354b8e8
+DATA: {
+  "user": "6995e5d35ea694cb4354b8e8",
+  "orderNumber": "ORD-1771928428645-607",
+  "orderItems": [
+    {
+      "product": "699c2fa2f89faa22ce099a31",
+      "vendor": "6999b1b971ad4cdf9876e09e",
+      "quantity": 1,
+      "price": 799,
+      "itemTotal": 799
+    },
+    {
+      "product": "699c2fa2f89faa22ce099a33",
+      "vendor": "6999b1b971ad4cdf9876e09e",
+      "quantity": 1,
+      "price": 349,
+      "itemTotal": 349
+    },
+    {
+      "product": "699c2fa2f89faa22ce099a35",
+      "vendor": "6999b1b971ad4cdf9876e09e",
+      "quantity": 1,
+      "price": 999,
+      "itemTotal": 999
+    },
+    {
+      "product": "699c2fa2f89faa22ce099a39",
+      "vendor": "6999b1b971ad4cdf9876e09e",
+      "quantity": 1,
+      "price": 99,
+      "itemTotal": 99
+    }
+  ],
+  "shippingAddress": {
+    "name": "Santhosh",
+    "email": "skit@gmail.com",
+    "phone": "07358845634",
+    "address": "no;42, road street, moranam, cheyyar, tiruvanamalai",
+    "city": "cheyyar",
+    "state": "Tamil Nadu",
+    "postalCode": "604407",
+    "country": "India"
+  },
+  "paymentMethod": "COD",
+  "totalAmount": 2700,
+  "taxAmount": 404,
+  "shippingCharge": 50
+}
+
+
+--- [2026-02-24T10:20:58.324Z] ---
+USER: 6995e5d35ea694cb4354b8e8
+DATA: {
+  "user": "6995e5d35ea694cb4354b8e8",
+  "orderNumber": "ORD-1771928458323-386",
+  "orderItems": [
+    {
+      "product": "699c2fa2f89faa22ce099a36",
+      "vendor": "6999b1b971ad4cdf9876e09e",
+      "quantity": 1,
+      "price": 59,
+      "itemTotal": 59
+    }
+  ],
+  "shippingAddress": {
+    "name": "Santhosh",
+    "email": "skit@gmail.com",
+    "phone": "07358845634",
+    "address": "no;42, road street, moranam, cheyyar, tiruvanamalai",
+    "city": "cheyyar",
+    "state": "Tamil Nadu",
+    "postalCode": "604407",
+    "country": "India"
+  },
+  "paymentMethod": "COD",
+  "totalAmount": 120,
+  "taxAmount": 11,
+  "shippingCharge": 50
+}
