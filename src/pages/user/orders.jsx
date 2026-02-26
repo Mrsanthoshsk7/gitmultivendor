@@ -8,15 +8,7 @@ function Orders() {
     const [order, setOrder] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        if (id) {
-            fetchOrder();
-        } else {
-            fetchUserOrders();
-        }
-    }, [id]);
-
-    const fetchOrder = async () => {
+    const fetchOrder = React.useCallback(async () => {
         try {
             const res = await orderService.getOrder(id);
             setOrder(res.order || null);
@@ -26,9 +18,9 @@ function Orders() {
         } finally {
             setLoading(false);
         }
-    };
+    }, [id]);
 
-    const fetchUserOrders = async () => {
+    const fetchUserOrders = React.useCallback(async () => {
         try {
             const res = await orderService.getUserOrders();
             setOrder(res.orders || []);
@@ -38,7 +30,15 @@ function Orders() {
         } finally {
             setLoading(false);
         }
-    };
+    }, []);
+
+    useEffect(() => {
+        if (id) {
+            fetchOrder();
+        } else {
+            fetchUserOrders();
+        }
+    }, [id, fetchOrder, fetchUserOrders]);
 
     const handleCancelOrder = async (orderId) => {
         if (window.confirm("Cancel this order?")) {

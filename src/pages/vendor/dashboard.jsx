@@ -5,11 +5,7 @@ function VendorDashboard() {
     const [stats, setStats] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        fetchStats();
-    }, []);
-
-    const fetchStats = async () => {
+    const fetchStats = React.useCallback(async () => {
         try {
             const res = await vendorService.getVendorStats();
             setStats(res.stats);
@@ -18,7 +14,11 @@ function VendorDashboard() {
         } finally {
             setLoading(false);
         }
-    };
+    }, []);
+
+    useEffect(() => {
+        fetchStats();
+    }, [fetchStats]);
 
     if (loading)
         return (

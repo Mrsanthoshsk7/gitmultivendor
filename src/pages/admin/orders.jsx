@@ -9,11 +9,7 @@ function AdminOrders() {
     const [statusFilter, setStatusFilter] = useState("");
     const [updating, setUpdating] = useState(null);
 
-    useEffect(() => {
-        fetchOrders();
-    }, [page, statusFilter]);
-
-    const fetchOrders = async () => {
+    const fetchOrders = React.useCallback(async () => {
         setLoading(true);
         try {
             const res = await getAllOrders(page, 10, statusFilter);
@@ -24,7 +20,11 @@ function AdminOrders() {
         } finally {
             setLoading(false);
         }
-    };
+    }, [page, statusFilter]);
+
+    useEffect(() => {
+        fetchOrders();
+    }, [fetchOrders]);
 
     const handleStatusUpdate = async (orderId, newStatus) => {
         setUpdating(orderId);

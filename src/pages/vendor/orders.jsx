@@ -5,11 +5,7 @@ function VendorOrders() {
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        fetchVendorOrders();
-    }, []);
-
-    const fetchVendorOrders = async () => {
+    const fetchVendorOrders = React.useCallback(async () => {
         try {
             const res = await orderService.getVendorOrders();
             setOrders(res.orders || []);
@@ -18,7 +14,11 @@ function VendorOrders() {
         } finally {
             setLoading(false);
         }
-    };
+    }, []);
+
+    useEffect(() => {
+        fetchVendorOrders();
+    }, [fetchVendorOrders]);
 
     const handleStatusChange = async (orderId, newStatus) => {
         try {

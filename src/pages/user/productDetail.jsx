@@ -15,7 +15,6 @@ function ProductDetail() {
     const [reviews, setReviews] = useState([]);
     const [quantity, setQuantity] = useState(1);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchProduct = async () => {
@@ -28,7 +27,6 @@ function ProductDetail() {
                 setReviews(reviewsRes.reviews || []);
             } catch (error) {
                 console.error("Error fetching product:", error);
-                setError(error.response?.data?.message || "Failed to fetch product");
             } finally {
                 setLoading(false);
             }

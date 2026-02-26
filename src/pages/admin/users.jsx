@@ -6,11 +6,7 @@ function AdminUsers() {
     const [loading, setLoading] = useState(true);
     const [page, setPage] = useState(1);
 
-    useEffect(() => {
-        fetchUsers();
-    }, [page]);
-
-    const fetchUsers = async () => {
+    const fetchUsers = React.useCallback(async () => {
         try {
             const res = await getAllUsers(page, 10);
             setUsers(res.data.users || []);
@@ -19,7 +15,11 @@ function AdminUsers() {
         } finally {
             setLoading(false);
         }
-    };
+    }, [page]);
+
+    useEffect(() => {
+        fetchUsers();
+    }, [fetchUsers]);
 
     const handleApproveVendor = async (userId) => {
         try {

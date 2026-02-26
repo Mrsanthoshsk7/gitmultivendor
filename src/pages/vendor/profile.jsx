@@ -16,11 +16,7 @@ function VendorProfile() {
 
     const { refreshUser } = useAuth();
 
-    useEffect(() => {
-        fetchProfile();
-    }, []);
-
-    const fetchProfile = async () => {
+    const fetchProfile = React.useCallback(async () => {
         try {
             const res = await vendorService.getVendorProfile();
             setProfile(res.vendor);
@@ -39,7 +35,11 @@ function VendorProfile() {
         } finally {
             setLoading(false);
         }
-    };
+    }, [refreshUser]);
+
+    useEffect(() => {
+        fetchProfile();
+    }, [fetchProfile]);
 
     const handleRefresh = () => {
         setLoading(true);

@@ -4,7 +4,6 @@ import { getVendors, approveVendor } from "../../services/adminService";
 function AdminVendors() {
     const [vendors, setVendors] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [selectedVendor, setSelectedVendor] = useState(null);
 
     useEffect(() => {
         fetchVendors();

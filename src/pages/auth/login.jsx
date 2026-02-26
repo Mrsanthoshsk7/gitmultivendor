@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import LoginForm from "../../components/auth/loginform";
 // import Auth from "../../components/auth/auth";

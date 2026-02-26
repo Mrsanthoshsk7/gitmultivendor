@@ -6,7 +6,7 @@ import { useAuth } from "../../context/AuthContext";
 function Cart() {
     const [cart, setCart] = useState(null);
     const [loading, setLoading] = useState(true);
-    const { user } = useAuth();
+    useAuth();
 
     useEffect(() => {
         fetchCart();

@@ -93,7 +93,7 @@ function Navbar() {
                                     <li className="nav-item dropdown">
                                         <a
                                             className="nav-link dropdown-toggle"
-                                            href="#"
+                                            href="#!"
                                             id="vendorDropdown"
                                             role="button"
                                             data-bs-toggle="dropdown"
@@ -135,7 +135,7 @@ function Navbar() {
                                     <li className="nav-item dropdown">
                                         <a
                                             className="nav-link dropdown-toggle"
-                                            href="#"
+                                            href="#!"
                                             id="adminDropdown"
                                             role="button"
                                             data-bs-toggle="dropdown"
@@ -181,7 +181,7 @@ function Navbar() {
                                 <li className="nav-item dropdown">
                                     <a
                                         className="nav-link dropdown-toggle"
-                                        href="#"
+                                        href="#!"
                                         id="userDropdown"
                                         role="button"
                                         data-bs-toggle="dropdown"
