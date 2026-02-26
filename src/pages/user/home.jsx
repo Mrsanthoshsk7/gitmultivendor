@@ -11,11 +11,9 @@ import "./home.css";
 
 function Home() {
     const [products, setProducts] = useState([]);
-    const [categories, setCategories] = useState([]);
     const [category, setCategory] = useState("");
     const [minprice, setMinPrice] = useState("");
     const [maxprice, setMaxPrice] = useState("");
-    const [name, setName] = useState("");
     const [loading, setLoading] = useState(false);
     const { toggleFavorite, isFavorite } = useFavorites();
     const { user } = useAuth();
@@ -35,15 +33,15 @@ function Home() {
         }
     };
 
-    const fetchCategories = async () => {
+    const fetchCategories = React.useCallback(async () => {
         try {
-            const response = await productService.getCategories();
-            setCategories(response.categories || []);
+            await productService.getCategories();
         } catch (error) {
             console.error("Error fetching categories:", error);
         }
-    };
-    const fetchProductbyquery = async () => {
+    }, []);
+
+    const fetchProductbyquery = React.useCallback(async () => {
         setLoading(true);
         try {
             const params = {};
@@ -59,15 +57,15 @@ function Home() {
         } finally {
             setLoading(false);
         }
-    };
+    }, [category, minprice, maxprice]);
 
     useEffect(() => {
         fetchProductbyquery();
-    }, [category, minprice, maxprice, name]);
+    }, [fetchProductbyquery]);
 
     useEffect(() => {
         fetchCategories();
-    }, []);
+    }, [fetchCategories]);
 
 
 

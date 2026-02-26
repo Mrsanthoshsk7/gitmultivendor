@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import RegisterForm from "../../components/auth/registerform";
 function Register() {

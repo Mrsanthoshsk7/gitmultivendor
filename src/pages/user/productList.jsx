@@ -10,7 +10,7 @@ function ProductList() {
     const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(true);
     const [searchParams] = useSearchParams();
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage] = useState(1);
     const [category, setCategory] = useState("");
     const { toggleFavorite, isFavorite } = useFavorites();
     const { user } = useAuth();
