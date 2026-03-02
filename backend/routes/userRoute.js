@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { getAllUsers, getUserById, deleteUser } = require('../controllers/userController');
-const { verifyToken, authorize } = require('../middleware/authmiddleware');
+const { verifyToken, authorize } = require('..../middleware/authmiddleware');
 
 // Admin routes
 router.get('/', verifyToken, authorize('admin'), getAllUsers);
