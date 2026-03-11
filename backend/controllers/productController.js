@@ -247,7 +247,7 @@ exports.updateProduct = asyncHandler(async (req, res) => {
         name,
         description,
         price,
-        images,
+        images: existingImages,
         category,
         stock,
         tags,
@@ -255,13 +255,22 @@ exports.updateProduct = asyncHandler(async (req, res) => {
         specifications,
     } = req.body;
 
+    // Handle new image uploads if any
+    let updatedImages = existingImages;
+    if (req.files && req.files.length > 0) {
+        const newImages = req.files.map(file => file.path);
+        // Depending on requirements, you might want to merge or replace. 
+        // Replacing for now as it's cleaner for an "update" unless specified.
+        updatedImages = newImages;
+    }
+
     product = await Product.findByIdAndUpdate(
         req.params.productId,
         {
             ...(name && { name }),
             ...(description && { description }),
             ...(price && { price }),
-            ...(images && { images }),
+            ...(updatedImages && { images: updatedImages }),
             ...(category && { category }),
             ...(stock !== undefined && { stock }),
             ...(tags && { tags }),
