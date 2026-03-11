@@ -187,7 +187,7 @@ function VendorProducts() {
             <div className="row">
                 {products.length > 0 ? (
                     products.map((product) => (
-                        <div key={product._id} className="col-md-6 mb-4">
+                        <div key={product._id} className="col-md-2 mb-4">
                             <div className="card">
                                 <img
                                     src={product.images?.[0]}
