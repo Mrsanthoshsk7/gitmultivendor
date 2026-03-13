@@ -230,19 +230,19 @@ function Home() {
                             <h5>Section</h5>
                             <ul className="nav flex-column">
                                 <li className="nav-item mb-2">
-                                    <a href="#" className="nav-link p-0 text-body-secondary">Home</a>
+                                    <a href="/" className="nav-link p-0 text-body-secondary">Home</a>
                                 </li>
                                 <li className="nav-item mb-2">
-                                    <a href="#" className="nav-link p-0 text-body-secondary">Features</a>
+                                    <a href="/" className="nav-link p-0 text-body-secondary">Features</a>
                                 </li>
                                 <li className="nav-item mb-2">
-                                    <a href="#" className="nav-link p-0 text-body-secondary">Pricing</a>
+                                    <a href="/" className="nav-link p-0 text-body-secondary">Pricing</a>
                                 </li>
                                 <li className="nav-item mb-2">
-                                    <a href="#" className="nav-link p-0 text-body-secondary">FAQs</a>
+                                    <a href="/" className="nav-link p-0 text-body-secondary">FAQs</a>
                                 </li>
                                 <li className="nav-item mb-2">
-                                    <a href="#" className="nav-link p-0 text-body-secondary">About</a>
+                                    <a href="/" className="nav-link p-0 text-body-secondary">About</a>
                                 </li>
                             </ul>
                         </div>
@@ -278,7 +278,7 @@ function Home() {
 
                         <ul className="list-unstyled d-flex">
                             <li className="ms-3">
-                                <a className="link-body-emphasis" href="#" aria-label="Instagram">
+                                <a className="link-body-emphasis" href="/" aria-label="Instagram">
                                     <svg className="bi" width="24" height="24">
                                         <use xlinkHref="#instagram"></use>
                                     </svg>
@@ -286,7 +286,7 @@ function Home() {
                             </li>
 
                             <li className="ms-3">
-                                <a className="link-body-emphasis" href="#" aria-label="Facebook">
+                                <a className="link-body-emphasis" href="/" aria-label="Facebook">
                                     <svg className="bi" width="24" height="24">
                                         <use xlinkHref="#facebook"></use>
                                     </svg>
