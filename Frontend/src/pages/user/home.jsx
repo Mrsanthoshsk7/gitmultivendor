@@ -278,7 +278,7 @@ function Home() {
 
                         <ul className="list-unstyled d-flex">
                             <li className="ms-3">
-                                <a className="link-body-emphasis" href="#" aria-label="Instagram">
+                                <a className="link-body-emphasis" href="/" aria-label="Instagram">
                                     <svg className="bi" width="24" height="24">
                                         <use xlinkHref="#instagram"></use>
                                     </svg>
@@ -286,7 +286,7 @@ function Home() {
                             </li>
 
                             <li className="ms-3">
-                                <a className="link-body-emphasis" href="#" aria-label="Facebook">
+                                <a className="link-body-emphasis" href="/" aria-label="Facebook">
                                     <svg className="bi" width="24" height="24">
                                         <use xlinkHref="#facebook"></use>
                                     </svg>
