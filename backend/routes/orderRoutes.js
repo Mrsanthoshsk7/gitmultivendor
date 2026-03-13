@@ -7,7 +7,7 @@ const {
     cancelOrder,
     getVendorOrders,
 } = require("../controllers/orderController");
-const { verifyToken, authorize, authorizeApprovedVendor } = require("../middleware/authMiddleware");
+const { verifyToken, authorize, authorizeApprovedVendor } = require("../middleware/authmiddleware");
 
 const router = express.Router();
 

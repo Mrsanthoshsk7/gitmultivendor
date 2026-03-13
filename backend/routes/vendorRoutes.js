@@ -8,7 +8,7 @@ const {
     getVendorReviews,
     getAllVendors,
 } = require("../controllers/vendorController");
-const { verifyToken, authorize, authorizeApprovedVendor } = require("../middleware/authMiddleware");
+const { verifyToken, authorize, authorizeApprovedVendor } = require("../middleware/authmiddleware");
 
 const router = express.Router();
 

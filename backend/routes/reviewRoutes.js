@@ -7,7 +7,7 @@ const {
     getMyReviews,
     markHelpful,
 } = require("../controllers/reviewController");
-const { verifyToken, optionalAuth } = require("../middleware/authMiddleware");
+const { verifyToken, optionalAuth } = require("../middleware/authmiddleware");
 
 const router = express.Router();
 

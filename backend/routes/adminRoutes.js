@@ -12,7 +12,7 @@ const {
   getRevenueAnalytics,
   getAllOrders,
 } = require("../controllers/adminController");
-const { verifyToken, authorize } = require("../middleware/authMiddleware");
+const { verifyToken, authorize } = require("../middleware/authmiddleware");
 
 const router = express.Router();
 

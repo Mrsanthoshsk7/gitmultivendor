@@ -9,7 +9,7 @@ const {
     getMyVendorProducts,
     getCategories,
 } = require("../controllers/productController");
-const { verifyToken, authorize, authorizeApprovedVendor } = require("../middleware/authMiddleware");
+const { verifyToken, authorize, authorizeApprovedVendor } = require("../middleware/authmiddleware");
 const { upload } = require("../config/cloudinary");
 const router = express.Router();
 

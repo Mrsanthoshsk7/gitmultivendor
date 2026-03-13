@@ -6,7 +6,7 @@ const {
     refundPayment,
     razorpayWebhook,
 } = require("../controllers/paymentController");
-const { verifyToken } = require("../middleware/authMiddleware");
+const { verifyToken } = require("../middleware/authmiddleware");
 
 const router = express.Router();
 
