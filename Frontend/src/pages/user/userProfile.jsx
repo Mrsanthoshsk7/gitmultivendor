@@ -19,7 +19,7 @@ function UserProfile() {
     const [loading, setLoading] = useState(false);
     const [activeTab, setActiveTab] = useState("profile");
 
-    const API_URL = process.env.REACT_APP_API_URL;
+    const API_URL = process.env.REACT_APP_API_URL || "https://gitmultivendor-10.onrender.com/api";
 
     useEffect(() => {
         if (user) {

@@ -1,7 +1,7 @@
 import axios from "axios";
 import api from "./api";
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = process.env.REACT_APP_API_URL || "https://gitmultivendor-10.onrender.com/api";
 const ADMIN_BASE_URL = `${API_URL}/admin`;
 
 // Create axios instance for admin

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = process.env.REACT_APP_API_URL || "https://gitmultivendor-10.onrender.com/api";
 
 // Create axios instance with default config
 const api = axios.create({

@@ -36,22 +36,13 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // CORS configuration
-const allowedOrigins = [
-  "http://localhost:3000",
-  "http://localhost:3001",
-  process.env.CLIENT_URL,
-].filter(Boolean);
+// const allowedOrigins = [
+//   "http://localhost:3000",
+//   "http://localhost:3001",
+//   process.env.CLIENT_URL,
+// ].filter(Boolean);
 
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true,
-}));
+app.use(cors());
 
 // Normalize double slashes in URLs
 app.use((req, res, next) => {
@@ -68,6 +59,9 @@ app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use("/uploads", express.static("uploads"));
 
 // Routes
+app.get("/", (req, res) => {
+  res.send("Multivendor API is running 🚀");
+});
 app.use("/api/auth", authRoutes);
 
 app.use("/api/products", productRoutes);
